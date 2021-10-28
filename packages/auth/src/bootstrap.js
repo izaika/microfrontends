@@ -8,7 +8,7 @@ import App from './App';
  * Mount function to start up the app
  * @param { HTMLDivElement } el 
  */
- const mount = (el, { onNavigate, defaultHistory, initialPath }) => {
+const mount = (el, { onNavigate, defaultHistory, initialPath }) => {
   const history = defaultHistory || createMemoryHistory({
     initialEntries: [initialPath]
   });
@@ -27,7 +27,7 @@ import App from './App';
 // call mount immediately
 if (process.env.NODE_ENV === 'development') {
   /** @type { HTMLDivElement } */
-  const devRoot = document.getElementById('_marketing-dev-root');
+  const devRoot = document.getElementById('_auth-dev-root');
   if (devRoot) mount(devRoot, { defaultHistory: createBrowserHistory() });
 }
 
