@@ -8,12 +8,12 @@ import App from './App';
  * Mount function to start up the app
  * @param { HTMLDivElement } el 
  */
-const mount = (el, { onNavigate, defaultHistory, initialPath }) => {
+const mount = (el, { onNavigate, defaultHistory, initialPath, onSignIn }) => {
   const history = defaultHistory || createMemoryHistory({
     initialEntries: [initialPath]
   });
   onNavigate && history.listen(onNavigate);
-  ReactDOM.render(<App history={history} />, el);
+  ReactDOM.render(<App history={history} onSignIn={onSignIn} />, el);
 
   return {
     onParentNavigate({ pathname: nextPathName }) {
